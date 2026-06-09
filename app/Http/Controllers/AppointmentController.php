@@ -25,8 +25,7 @@ class AppointmentController extends Controller
     public function doctorIndex(Request $request): View
     {
         $doctor = auth()->user()->doctor;
-        $specialty = $doctor->specialty;
-        
+
         $query = Appointment::where('doctor_id', $doctor->id)
             ->with('patient.user');
             
@@ -50,8 +49,7 @@ class AppointmentController extends Controller
     public function doctorCreate(Request $request): View
     {
         $doctor = auth()->user()->doctor;
-        $specialty = $doctor->specialty;
-        
+
         $treatedPatientIds = Appointment::where('doctor_id', $doctor->id)
             ->distinct()
             ->pluck('patient_id')

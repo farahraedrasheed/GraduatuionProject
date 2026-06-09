@@ -47,7 +47,7 @@ class ProfileController extends Controller
         $user->fill($validated)->save();
 
         if ($user->role === 'patient' && $user->patient) {
-$patientData = $request->validate([
+            $patientData = $request->validate([
                 'name' => 'required|string',
                 'phone' => 'required|string',
                 'date_of_birth' => 'required|date',
@@ -70,9 +70,6 @@ $patientData = $request->validate([
                 'bio' => 'nullable|string',
             ]);
 
-            if (isset($patientData['name'])) {
-                $user->update(['name' => $patientData['name']]);
-            }
             $user->doctor->update($doctorData);
         }
 

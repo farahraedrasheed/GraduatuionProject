@@ -7,7 +7,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Illuminate\Http\Response;
 
 class MedicalReportController extends Controller
 {
@@ -47,7 +46,7 @@ class MedicalReportController extends Controller
     public function download(MedicalReport $report)
     {
         if ($report->patient_id !== auth()->user()->patient->id) {
-            return back()->with('error', 'لا يمكنك الوصول到这个 الملف');
+            return back()->with('error', 'لا يمكنك الوصول إلى هذا الملف');
         }
 
         if (!Storage::disk('public')->exists($report->file_path)) {
