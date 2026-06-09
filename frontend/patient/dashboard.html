@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم المريض - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html" class="active">لوحة التحكم</a>
+                    <a href="appointments.html">مواعيدي</a>
+                    <a href="medical-records.html">السجلات الطبية</a>
+                    <a href="medical-reports.html">التقارير الطبية</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem;">
+            <h1 style="color: #1f2937; margin-bottom: 0.5rem;">لوحة تحكم المريض</h1>
+            <p style="color: #6b7280; margin-bottom: 2rem;">
+                فئة المريض: طفل (طب الأطفال)
+            </p>
+            
+            <!-- Quick Actions -->
+            <div class="action-grid">
+                <a href="appointments.html" class="action-card" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                    <svg style="width: 2rem; height: 2rem; margin: 0 auto 0.5rem; display: block;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <p style="font-weight: bold;">مواعيدي</p>
+                </a>
+                <a href="medical-records.html" class="action-card" style="background: linear-gradient(135deg, #10b981, #059669);">
+                    <svg style="width: 2rem; height: 2rem; margin: 0 auto 0.5rem; display: block;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <p style="font-weight: bold;">السجلات الطبية</p>
+                </a>
+                <a href="../profile.html" class="action-card" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                    <svg style="width: 2rem; height: 2rem; margin: 0 auto 0.5rem; display: block;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                    <p style="font-weight: bold;">ملفي الشخصي</p>
+                </a>
+                <a href="medical-reports.html" class="action-card" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    <svg style="width: 2rem; height: 2rem; margin: 0 auto 0.5rem; display: block;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    </svg>
+                    <p style="font-weight: bold;">التقارير الطبية</p>
+                </a>
+            </div>
+
+            <!-- Patient Info -->
+            <div style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 1.5rem; margin-bottom: 2rem;">
+                <h2 style="color: #1f2937; margin-bottom: 1rem;">معلوماتك الشخصية</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div><span style="color: #6b7280;">العمر:</span> 25 سنة</div>
+                    <div><span style="color: #6b7280;">تاريخ الميلاد:</span> 2000-01-15</div>
+                    <div><span style="color: #6b7280;">الجنس:</span> ذكر</div>
+                    <div><span style="color: #6b7280;">الهاتف:</span> 0599999999</div>
+                </div>
+            </div>
+
+            <!-- Appointments Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 style="color: #f59e0b;">مواعيد معلقة</h3>
+                    <p style="color: #f59e0b;">3</p>
+                </div>
+                <div class="stat-card">
+                    <h3 style="color: #3b82f6;">مواعيد مؤكدة</h3>
+                    <p style="color: #3b82f6;">5</p>
+                </div>
+                <div class="stat-card">
+                    <h3 style="color: #10b981;">مواعيد مكتملة</h3>
+                    <p style="color: #10b981;">12</p>
+                </div>
+            </div>
+
+            <!-- Recent Appointments -->
+            <div class="table-container">
+                <h2 style="color: #1f2937; margin-bottom: 1rem;">مواعيدك الأخيرة</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الطبيب</th>
+                            <th>التخصص</th>
+                            <th>التاريخ</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>د. أحمد علي</td>
+                            <td>طب الأطفال</td>
+                            <td>2026-06-10 10:00</td>
+                            <td><span class="badge badge-pending">معلق</span></td>
+                        </tr>
+                        <tr>
+                            <td>د. سارة محمد</td>
+                            <td>قلب وشرايين</td>
+                            <td>2026-06-08 14:30</td>
+                            <td><span class="badge badge-confirmed">مؤكد</span></td>
+                        </tr>
+                        <tr>
+                            <td>د. خالد عمر</td>
+                            <td>نساء وتوليد</td>
+                            <td>2026-06-05 09:00</td>
+                            <td><span class="badge badge-completed">مكتمل</span></td>
+                        </tr>
+                        <tr>
+                            <td>د. ليلى حسن</td>
+                            <td>طب عام</td>
+                            <td>2026-06-01 11:00</td>
+                            <td><span class="badge badge-completed">مكتمل</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

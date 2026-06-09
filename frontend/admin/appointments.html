@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المواعيد - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="doctors.html">الأطباء</a>
+                    <a href="patients.html">المرضى</a>
+                    <a href="appointments.html" class="active">المواعيد</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1.5rem;">
+                <h2 style="font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">جميع المواعيد</h2>
+
+                <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr style="text-align: right; color: #6b7280;">
+                            <th style="padding: 0.75rem 1rem;">المريض</th>
+                            <th style="padding: 0.75rem 1rem;">الطبيب</th>
+                            <th style="padding: 0.75rem 1rem;">التاريخ</th>
+                            <th style="padding: 0.75rem 1rem;">الحالة</th>
+                            <th style="padding: 0.75rem 1rem;">ملاحظات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">محمد أحمد</td>
+                            <td style="padding: 0.75rem 1rem;">د. أحمد علي</td>
+                            <td style="padding: 0.75rem 1rem;">2026-06-10 10:00</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-pending">معلق</span></td>
+                            <td style="padding: 0.75rem 1rem; color: #6b7280; font-size: 0.875rem;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">سارة خالد</td>
+                            <td style="padding: 0.75rem 1rem;">د. سارة محمد</td>
+                            <td style="padding: 0.75rem 1rem;">2026-06-08 14:30</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-confirmed">مؤكد</span></td>
+                            <td style="padding: 0.75rem 1rem; color: #6b7280; font-size: 0.875rem;">الالتزام بالجرعة</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">عمر حسن</td>
+                            <td style="padding: 0.75rem 1rem;">د. خالد عمر</td>
+                            <td style="padding: 0.75rem 1rem;">2026-06-05 09:00</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-completed">مكتمل</span></td>
+                            <td style="padding: 0.75rem 1rem; color: #6b7280; font-size: 0.875rem;">متابعة دورية</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">ليلى محمد</td>
+                            <td style="padding: 0.75rem 1rem;">د. ليلى حسن</td>
+                            <td style="padding: 0.75rem 1rem;">2026-06-01 11:00</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-completed">مكتمل</span></td>
+                            <td style="padding: 0.75rem 1rem; color: #6b7280; font-size: 0.875rem;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">نور هاني</td>
+                            <td style="padding: 0.75rem 1rem;">د. أحمد علي</td>
+                            <td style="padding: 0.75rem 1rem;">2026-05-28 09:30</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-cancelled">ملغي</span></td>
+                            <td style="padding: 0.75rem 1rem; color: #6b7280; font-size: 0.875rem;">إلغاء من المريض</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">محمود سمير</td>
+                            <td style="padding: 0.75rem 1rem;">د. سارة محمد</td>
+                            <td style="padding: 0.75rem 1rem;">2026-05-25 16:00</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-confirmed">مؤكد</span></td>
+                            <td style="padding: 0.75rem 1rem; color: #6b7280; font-size: 0.875rem;">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

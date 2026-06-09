@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html" class="active">لوحة التحكم</a>
+                    <a href="profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem;">
+            <h1 style="color: #1f2937; margin-bottom: 0.5rem;">لوحة التحكم</h1>
+            <p style="color: #6b7280; margin-bottom: 2rem;">مرحباً بعودتك! أنت مسجل الدخول.</p>
+
+            <div style="background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 2rem; text-align: center;">
+                <svg style="width: 4rem; height: 4rem; margin: 0 auto 1rem; color: #3b82f6;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                <h2 style="color: #1f2937; margin-bottom: 0.5rem;">تم تسجيل الدخول بنجاح</h2>
+                <p style="color: #6b7280; margin-bottom: 1.5rem;">اختر لوحة التحكم المناسبة لدورك:</p>
+                <div class="action-grid">
+                    <a href="patient/dashboard.html" class="action-card" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                        <p style="font-weight: bold;">لوحة المريض</p>
+                    </a>
+                    <a href="doctor/dashboard.html" class="action-card" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <p style="font-weight: bold;">لوحة الطبيب</p>
+                    </a>
+                    <a href="admin/dashboard.html" class="action-card" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <p style="font-weight: bold;">لوحة المسؤول</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرضاي - لوحة تحكم الطبيب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="appointments.html">المواعيد</a>
+                    <a href="patients.html" class="active">مرضاي</a>
+                    <a href="schedule.html">الجدول</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="font-size: 1.25rem; font-weight: 700; color: #1f2937;">قائمة مرضاي</h2>
+                <a href="dashboard.html" style="background: #6b7280; color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; text-decoration: none; font-size: 0.875rem;">
+                    ← العودة
+                </a>
+            </div>
+
+            <!-- Search Form -->
+            <div style="background: white; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1rem; margin-bottom: 1.5rem;">
+                <form style="display: flex; gap: 1rem; align-items: end;">
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 0.875rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">البحث</label>
+                        <input type="text" name="search" placeholder="البحث باسم المريض أو رقم الهاتف..." style="width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #d1d5db; border-radius: 0.5rem;">
+                    </div>
+                    <button type="submit" style="background: #2563eb; color: white; padding: 0.5rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; font-family: 'Cairo', sans-serif;">بحث</button>
+                </form>
+            </div>
+
+            <div style="background: white; border-radius: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow-x: auto;">
+                <table>
+                    <thead style="background: #f9fafb;">
+                        <tr>
+                            <th style="padding: 0.75rem 1rem;">اسم المريض</th>
+                            <th style="padding: 0.75rem 1rem;">العمر</th>
+                            <th style="padding: 0.75rem 1rem;">الجنس</th>
+                            <th style="padding: 0.75rem 1rem;">رقم الهاتف</th>
+                            <th style="padding: 0.75rem 1rem;">الفئة / الأمراض</th>
+                            <th style="padding: 0.75rem 1rem;">إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">محمد أحمد</td>
+                            <td style="padding: 0.75rem 1rem;">25</td>
+                            <td style="padding: 0.75rem 1rem;">ذكر</td>
+                            <td style="padding: 0.75rem 1rem;">0591111111</td>
+                            <td style="padding: 0.75rem 1rem;">طفل</td>
+                            <td style="padding: 0.75rem 1rem;"><a href="patient-show.html" style="color: #2563eb; text-decoration: none; font-size: 0.875rem;">عرض السجل</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">سارة خالد</td>
+                            <td style="padding: 0.75rem 1rem;">30</td>
+                            <td style="padding: 0.75rem 1rem;">أنثى</td>
+                            <td style="padding: 0.75rem 1rem;">0592222222</td>
+                            <td style="padding: 0.75rem 1rem;">حامل</td>
+                            <td style="padding: 0.75rem 1rem;"><a href="patient-show.html" style="color: #2563eb; text-decoration: none; font-size: 0.875rem;">عرض السجل</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">عمر حسن</td>
+                            <td style="padding: 0.75rem 1rem;">55</td>
+                            <td style="padding: 0.75rem 1rem;">ذكر</td>
+                            <td style="padding: 0.75rem 1rem;">0593333333</td>
+                            <td style="padding: 0.75rem 1rem;">القلب والشرايين</td>
+                            <td style="padding: 0.75rem 1rem;"><a href="patient-show.html" style="color: #2563eb; text-decoration: none; font-size: 0.875rem;">عرض السجل</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">ليلى محمد</td>
+                            <td style="padding: 0.75rem 1rem;">28</td>
+                            <td style="padding: 0.75rem 1rem;">أنثى</td>
+                            <td style="padding: 0.75rem 1rem;">0594444444</td>
+                            <td style="padding: 0.75rem 1rem;">السكري والغدد</td>
+                            <td style="padding: 0.75rem 1rem;"><a href="patient-show.html" style="color: #2563eb; text-decoration: none; font-size: 0.875rem;">عرض السجل</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">نور هاني</td>
+                            <td style="padding: 0.75rem 1rem;">45</td>
+                            <td style="padding: 0.75rem 1rem;">أنثى</td>
+                            <td style="padding: 0.75rem 1rem;">0595555555</td>
+                            <td style="padding: 0.75rem 1rem;">الكبد الوبائي (الباطنة)</td>
+                            <td style="padding: 0.75rem 1rem;"><a href="patient-show.html" style="color: #2563eb; text-decoration: none; font-size: 0.875rem;">عرض السجل</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

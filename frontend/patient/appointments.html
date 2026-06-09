@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواعيدي - لوحة تحكم المريض</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="appointments.html" class="active">مواعيدي</a>
+                    <a href="medical-records.html">السجلات الطبية</a>
+                    <a href="medical-reports.html">التقارير الطبية</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem;">
+            <div class="table-container">
+                <h2 style="font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 1.5rem;">مواعيدي</h2>
+
+                <div style="background-color: #d1fae5; border: 1px solid #6ee7b7; color: #065f46; padding: 0.75rem 1rem; border-radius: 0.5rem; margin-bottom: 1rem; display: none;">
+                    تم تحديث الموعد بنجاح
+                </div>
+
+                <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الطبيب</th>
+                            <th>نوع الزيارة</th>
+                            <th>الوصف</th>
+                            <th>اسم الدواء</th>
+                            <th>ملاحظة الطبيب</th>
+                            <th>التشخيص</th>
+                            <th>الوصفة</th>
+                            <th>تاريخ الطلب</th>
+                            <th>تاريخ التأكيد</th>
+                            <th>الحالة</th>
+                            <th>إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>د. أحمد علي</td>
+                            <td style="font-size: 0.9rem;">تطعيم حديثي الولادة</td>
+                            <td style="font-size: 0.9rem;">متابعة تطعيم الشهر الثاني</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">2026-06-01</td>
+                            <td><span style="color: #d97706;">بانتظار التأكيد</span></td>
+                            <td><span class="badge badge-pending">بانتظار الموافقة</span></td>
+                            <td>
+                                <div style="display: flex; gap: 0.5rem;">
+                                    <button style="background: #059669; color: white; padding: 0.25rem 0.75rem; border: none; border-radius: 0.25rem; font-size: 0.875rem; cursor: pointer; font-family: 'Cairo', sans-serif;">قبول</button>
+                                    <button style="background: #dc2626; color: white; padding: 0.25rem 0.75rem; border: none; border-radius: 0.25rem; font-size: 0.875rem; cursor: pointer; font-family: 'Cairo', sans-serif;">رفض</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>د. سارة محمد</td>
+                            <td style="font-size: 0.9rem;">أمراض القلب</td>
+                            <td style="font-size: 0.9rem;">ألم في الصدر</td>
+                            <td style="font-size: 0.9rem;">أسبرين</td>
+                            <td style="font-size: 0.9rem;">الالتزام بالجرعة</td>
+                            <td style="font-size: 0.9rem;">تضيق شرايين</td>
+                            <td style="font-size: 0.9rem;">أسبرين 81mg</td>
+                            <td style="font-size: 0.9rem;">2026-05-28</td>
+                            <td>2026-06-08 14:30</td>
+                            <td><span class="badge badge-confirmed">تم التأكيد</span></td>
+                            <td><span style="color: #9ca3af; font-size: 0.875rem;">لا توجد إجراءات</span></td>
+                        </tr>
+                        <tr>
+                            <td>د. خالد عمر</td>
+                            <td style="font-size: 0.9rem;">فحص حمل</td>
+                            <td style="font-size: 0.9rem;">متابعة حمل</td>
+                            <td style="font-size: 0.9rem;">فيتامينات</td>
+                            <td style="font-size: 0.9rem;">نتائج جيدة</td>
+                            <td style="font-size: 0.9rem;">حمل طبيعي</td>
+                            <td style="font-size: 0.9rem;">حمض فوليك</td>
+                            <td style="font-size: 0.9rem;">2026-05-20</td>
+                            <td>2026-06-05 09:00</td>
+                            <td><span class="badge badge-completed">مكتمل</span></td>
+                            <td><span style="color: #9ca3af; font-size: 0.875rem;">لا توجد إجراءات</span></td>
+                        </tr>
+                        <tr>
+                            <td>د. ليلى حسن</td>
+                            <td style="font-size: 0.9rem;">استشارة</td>
+                            <td style="font-size: 0.9rem;">استشارة عامة</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">-</td>
+                            <td style="font-size: 0.9rem;">2026-05-15</td>
+                            <td>2026-06-01 11:00</td>
+                            <td><span class="badge badge-cancelled">ملغي</span></td>
+                            <td><span style="color: #9ca3af; font-size: 0.875rem;">لا توجد إجراءات</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

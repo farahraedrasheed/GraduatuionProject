@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الطبيب - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html" class="active">لوحة التحكم</a>
+                    <a href="appointments.html">المواعيد</a>
+                    <a href="patients.html">مرضاي</a>
+                    <a href="schedule.html">الجدول</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1280px; margin: 0 auto; padding: 1.5rem 1rem;">
+            <h1 style="color: #1f2937; margin-bottom: 0.5rem;">لوحة تحكم الطبيب</h1>
+            <p style="color: #6b7280; margin-bottom: 0.25rem;">د. أحمد علي</p>
+            <p style="color: #6b7280; margin-bottom: 2rem;">التخصص: طب الأطفال</p>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 style="color: #f59e0b;">مواعيد معلقة</h3>
+                    <p style="color: #f59e0b;">4</p>
+                </div>
+                <div class="stat-card">
+                    <h3 style="color: #3b82f6;">مواعيد مؤكدة</h3>
+                    <p style="color: #3b82f6;">8</p>
+                </div>
+                <div class="stat-card">
+                    <h3 style="color: #10b981;">مواعيد مكتملة</h3>
+                    <p style="color: #10b981;">15</p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="action-grid">
+                <a href="appointments.html" class="action-card" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); font-weight: 600;">
+                    مواعيدي
+                </a>
+                <a href="patients.html" class="action-card" style="background: linear-gradient(135deg, #10b981, #059669); font-weight: 600;">
+                    مرضاي
+                </a>
+                <a href="schedule.html" class="action-card" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); font-weight: 600;">
+                    جدول المواعيد
+                </a>
+            </div>
+
+            <!-- Today's Appointments -->
+            <div class="table-container">
+                <h2 style="color: #1f2937; margin-bottom: 1rem;">مواعيد اليوم</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>المريض</th>
+                            <th>الوقت</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>محمد أحمد</td>
+                            <td>09:00</td>
+                            <td><span class="badge badge-pending">معلق</span></td>
+                            <td><a href="patient-show.html" style="color: #3b82f6; text-decoration: none;">عرض</a></td>
+                        </tr>
+                        <tr>
+                            <td>سارة خالد</td>
+                            <td>10:30</td>
+                            <td><span class="badge badge-confirmed">مؤكد</span></td>
+                            <td><a href="patient-show.html" style="color: #3b82f6; text-decoration: none;">عرض</a></td>
+                        </tr>
+                        <tr>
+                            <td>عمر حسن</td>
+                            <td>11:00</td>
+                            <td><span class="badge badge-confirmed">مؤكد</span></td>
+                            <td><a href="patient-show.html" style="color: #3b82f6; text-decoration: none;">عرض</a></td>
+                        </tr>
+                        <tr>
+                            <td>ليلى محمد</td>
+                            <td>12:00</td>
+                            <td><span class="badge badge-completed">مكتمل</span></td>
+                            <td><a href="patient-show.html" style="color: #3b82f6; text-decoration: none;">عرض</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

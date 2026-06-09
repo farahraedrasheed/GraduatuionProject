@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة سجل طبي - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="appointments.html" class="active">المواعيد</a>
+                    <a href="patients.html">مرضاي</a>
+                    <a href="schedule.html">الجدول</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="form-card">
+                <h2 style="font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 1.5rem;">
+                    إضافة سجل طبي للمريض: محمد أحمد
+                </h2>
+
+                <form>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">التشخيص</label>
+                            <textarea name="diagnosis" rows="3" required class="form-input" style="padding: 0.75rem;"></textarea>
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">الوصفة الطبية</label>
+                            <textarea name="prescription" rows="3" class="form-input" style="padding: 0.75rem;"></textarea>
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">الملاحظات</label>
+                            <textarea name="notes" rows="3" class="form-input" style="padding: 0.75rem;"></textarea>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem; gap: 1rem;">
+                        <a href="appointments.html" class="btn btn-ghost">إلغاء</a>
+                        <button type="submit" class="btn btn-primary">حفظ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

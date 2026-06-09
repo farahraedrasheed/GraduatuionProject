@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login-wrapper {
+            max-width: 500px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="login.html" class="btn btn-ghost">دخول</a>
+                <a href="register.html" class="btn btn-primary">حساب</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-wrapper">
+            <h2 style="text-align: center; margin-bottom: 0.5rem; color: #1f2937;">تسجيل الدخول</h2>
+            <p style="text-align: center; color: #6b7280; margin-bottom: 2rem;">مرحبا بكم في المركز الطبي</p>
+            
+            <form>
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">البريد الإلكتروني</label>
+                    <input type="email" name="email" value="" required autofocus 
+                           style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 8px;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">كلمة المرور</label>
+                    <input type="password" name="password" required 
+                           style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 8px;">
+                </div>
+
+                <div style="margin-bottom: 1rem; padding: 10px; background: #fee2e2; border-radius: 8px; display: none;">
+                    <p style="color: #dc2626; font-size: 0.9rem;">خطأ في البريد الإلكتروني أو كلمة المرور</p>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="#" style="font-size: 0.9rem; color: #6b7280;">نسيت كلمة المرور؟</a>
+                    <button type="submit" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 10px 30px; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: 'Cairo', sans-serif;">تسجيل الدخول</button>
+                </div>
+            </form>
+            
+            <p style="text-align: center; margin-top: 1.5rem; color: #6b7280;">
+                ليس لديك حساب؟ <a href="register.html" style="color: #3b82f6;">إنشاء حساب</a>
+            </p>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

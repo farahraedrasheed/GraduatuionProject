@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الأطباء - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="doctors.html" class="active">الأطباء</a>
+                    <a href="patients.html">المرضى</a>
+                    <a href="appointments.html">المواعيد</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.25rem; font-weight: 700; color: #1f2937; margin: 0;">قائمة الأطباء</h2>
+                    <a href="doctors-create.html" class="btn btn-primary">إضافة طبيب جديد</a>
+                </div>
+
+                <div style="background-color: #d1fae5; border: 1px solid #6ee7b7; color: #065f46; padding: 0.75rem 1rem; border-radius: 0.25rem; margin-bottom: 1rem; display: none;">
+                    تمت العملية بنجاح
+                </div>
+
+                <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr style="text-align: right; color: #6b7280;">
+                            <th style="padding: 0.75rem 1rem;">#</th>
+                            <th style="padding: 0.75rem 1rem;">الاسم</th>
+                            <th style="padding: 0.75rem 1rem;">البريد الإلكتروني</th>
+                            <th style="padding: 0.75rem 1rem;">التخصص</th>
+                            <th style="padding: 0.75rem 1rem;">رقم الترخيص</th>
+                            <th style="padding: 0.75rem 1rem;">الحالة</th>
+                            <th style="padding: 0.75rem 1rem;">الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">1</td>
+                            <td style="padding: 0.75rem 1rem; font-weight: 700;">أحمد علي</td>
+                            <td style="padding: 0.75rem 1rem;">ahmed@example.com</td>
+                            <td style="padding: 0.75rem 1rem;">طب عام</td>
+                            <td style="padding: 0.75rem 1rem;">LIC-001</td>
+                            <td style="padding: 0.75rem 1rem;"><span style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem; background: #d1fae5; color: #065f46;">نشط</span></td>
+                            <td style="padding: 0.75rem 1rem;">
+                                <a href="doctors-show.html" style="color: #2563eb; text-decoration: none; margin: 0 0.25rem;">عرض</a>
+                                <a href="doctors-edit.html" style="color: #d97706; text-decoration: none; margin: 0 0.25rem;">تعديل</a>
+                                <button onclick="return confirm('هل أنت متأكد من حذف هذا الطبيب؟')" style="color: #dc2626; background: none; border: none; cursor: pointer; margin: 0 0.25rem; font-family: inherit; font-size: inherit;">حذف</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">2</td>
+                            <td style="padding: 0.75rem 1rem; font-weight: 700;">سارة محمد</td>
+                            <td style="padding: 0.75rem 1rem;">sara@example.com</td>
+                            <td style="padding: 0.75rem 1rem;">أخصائي قلب</td>
+                            <td style="padding: 0.75rem 1rem;">LIC-002</td>
+                            <td style="padding: 0.75rem 1rem;"><span style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem; background: #d1fae5; color: #065f46;">نشط</span></td>
+                            <td style="padding: 0.75rem 1rem;">
+                                <a href="doctors-show.html" style="color: #2563eb; text-decoration: none; margin: 0 0.25rem;">عرض</a>
+                                <a href="doctors-edit.html" style="color: #d97706; text-decoration: none; margin: 0 0.25rem;">تعديل</a>
+                                <button onclick="return confirm('هل أنت متأكد من حذف هذا الطبيب؟')" style="color: #dc2626; background: none; border: none; cursor: pointer; margin: 0 0.25rem; font-family: inherit; font-size: inherit;">حذف</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">3</td>
+                            <td style="padding: 0.75rem 1rem; font-weight: 700;">خالد عمر</td>
+                            <td style="padding: 0.75rem 1rem;">khalid@example.com</td>
+                            <td style="padding: 0.75rem 1rem;">باطنة</td>
+                            <td style="padding: 0.75rem 1rem;">LIC-003</td>
+                            <td style="padding: 0.75rem 1rem;"><span style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem; background: #d1fae5; color: #065f46;">نشط</span></td>
+                            <td style="padding: 0.75rem 1rem;">
+                                <a href="doctors-show.html" style="color: #2563eb; text-decoration: none; margin: 0 0.25rem;">عرض</a>
+                                <a href="doctors-edit.html" style="color: #d97706; text-decoration: none; margin: 0 0.25rem;">تعديل</a>
+                                <button onclick="return confirm('هل أنت متأكد من حذف هذا الطبيب؟')" style="color: #dc2626; background: none; border: none; cursor: pointer; margin: 0 0.25rem; font-family: inherit; font-size: inherit;">حذف</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">4</td>
+                            <td style="padding: 0.75rem 1rem; font-weight: 700;">ليلى حسن</td>
+                            <td style="padding: 0.75rem 1rem;">layla@example.com</td>
+                            <td style="padding: 0.75rem 1rem;">أطفال</td>
+                            <td style="padding: 0.75rem 1rem;">LIC-004</td>
+                            <td style="padding: 0.75rem 1rem;"><span style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem; background: #fee2e2; color: #991b1b;">غير نشط</span></td>
+                            <td style="padding: 0.75rem 1rem;">
+                                <a href="doctors-show.html" style="color: #2563eb; text-decoration: none; margin: 0 0.25rem;">عرض</a>
+                                <a href="doctors-edit.html" style="color: #d97706; text-decoration: none; margin: 0 0.25rem;">تعديل</a>
+                                <button onclick="return confirm('هل أنت متأكد من حذف هذا الطبيب؟')" style="color: #dc2626; background: none; border: none; cursor: pointer; margin: 0 0.25rem; font-family: inherit; font-size: inherit;">حذف</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">5</td>
+                            <td style="padding: 0.75rem 1rem; font-weight: 700;">محمد سمير</td>
+                            <td style="padding: 0.75rem 1rem;">msameer@example.com</td>
+                            <td style="padding: 0.75rem 1rem;">عظام</td>
+                            <td style="padding: 0.75rem 1rem;">LIC-005</td>
+                            <td style="padding: 0.75rem 1rem;"><span style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.875rem; background: #d1fae5; color: #065f46;">نشط</span></td>
+                            <td style="padding: 0.75rem 1rem;">
+                                <a href="doctors-show.html" style="color: #2563eb; text-decoration: none; margin: 0 0.25rem;">عرض</a>
+                                <a href="doctors-edit.html" style="color: #d97706; text-decoration: none; margin: 0 0.25rem;">تعديل</a>
+                                <button onclick="return confirm('هل أنت متأكد من حذف هذا الطبيب؟')" style="color: #dc2626; background: none; border: none; cursor: pointer; margin: 0 0.25rem; font-family: inherit; font-size: inherit;">حذف</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواعيدي - لوحة تحكم الطبيب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="appointments.html" class="active">المواعيد</a>
+                    <a href="patients.html">مرضاي</a>
+                    <a href="schedule.html">الجدول</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="font-size: 1.25rem; font-weight: 700; color: #1f2937;">إدارة المواعيد</h2>
+                <a href="appointments-create.html" class="btn btn-primary" style="text-decoration: none;">
+                    + حجز موعد جديد
+                </a>
+            </div>
+
+            <div style="background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1rem; margin-bottom: 1.5rem;">
+                <form style="display: flex; gap: 1rem; align-items: end;">
+                    <div style="flex: 1;">
+                        <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">البحث عن مريض</label>
+                        <input type="text" name="search" placeholder="اسم المريض..." style="width: 100%; border: 1px solid #d1d5db; border-radius: 0.5rem; padding: 0.5rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">الحالة</label>
+                        <select name="status" style="border: 1px solid #d1d5db; border-radius: 0.5rem; padding: 0.5rem;">
+                            <option value="">كل الحالات</option>
+                            <option value="pending">معلق</option>
+                            <option value="confirmed">مؤكد</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="cancelled">ملغي</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">بحث</button>
+                    <a href="appointments.html" class="btn btn-ghost" style="text-decoration: none;">
+                        إلغاء
+                    </a>
+                </form>
+            </div>
+
+            <div style="background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow-x: auto;">
+                <table>
+                    <thead style="background: #f9fafb;">
+                        <tr>
+                            <th style="padding: 0.75rem 1rem;">المريض</th>
+                            <th style="padding: 0.75rem 1rem;">نوع الزيارة</th>
+                            <th style="padding: 0.75rem 1rem;">وصف الحالة</th>
+                            <th style="padding: 0.75rem 1rem;">تاريخ الطلب</th>
+                            <th style="padding: 0.75rem 1rem;">تاريخ الموعد</th>
+                            <th style="padding: 0.75rem 1rem;">الحالة</th>
+                            <th style="padding: 0.75rem 1rem;">ملاحظات</th>
+                            <th style="padding: 0.75rem 1rem;">إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">محمد أحمد</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">تطعيم حديثي الولادة</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">متابعة تطعيم الشهر الثاني</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">2026-06-01</td>
+                            <td style="padding: 0.75rem 1rem;"><span style="color: #d97706;">بانتظار التأكيد</span></td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-pending">معلق</span></td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem; color: #6b7280;">-</td>
+                            <td style="padding: 0.75rem 1rem;">
+                                <button onclick="confirmAppointment(1)" style="color: #2563eb; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem; margin-left: 0.5rem;">تأكيد</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">سارة خالد</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">أمراض القلب</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">ألم في الصدر</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">2026-05-28</td>
+                            <td style="padding: 0.75rem 1rem;">2026-06-08 14:30</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-confirmed">مؤكد</span></td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem; color: #6b7280;">الالتزام بالجرعة</td>
+                            <td style="padding: 0.75rem 1rem;">
+                                <a href="medical-record-create.html" style="color: #7c3aed; margin-left: 0.5rem; font-size: 0.9rem; text-decoration: none;">سجل طبي</a>
+                                <button style="color: #059669; background: none; border: none; cursor: pointer; font-family: inherit; font-size: 0.9rem;">إكمال</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 1rem;">عمر حسن</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">كشف عام</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">فحص عام</td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem;">2026-05-25</td>
+                            <td style="padding: 0.75rem 1rem;">2026-06-10 11:00</td>
+                            <td style="padding: 0.75rem 1rem;"><span class="badge badge-completed">مكتمل</span></td>
+                            <td style="padding: 0.75rem 1rem; font-size: 0.9rem; color: #6b7280;">-</td>
+                            <td style="padding: 0.75rem 1rem;"><span style="color: #9ca3af; font-size: 0.875rem;">-</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Modal -->
+    <div id="confirmModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 50; align-items: center; justify-content: center;">
+        <div style="background: #fff; border-radius: 8px; padding: 1.5rem; max-width: 28rem; margin: 0 auto;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;">تأكيد الموعد</h3>
+            <form id="confirmForm">
+                <div style="margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem;">تاريخ ووقت الموعد</label>
+                    <input type="datetime-local" name="appointment_date" required style="width: 100%; border: 1px solid #d1d5db; border-radius: 0.5rem; padding: 0.5rem;">
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button type="submit" class="btn btn-primary">تأكيد</button>
+                    <button type="button" onclick="closeModal()" class="btn btn-ghost">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+        function confirmAppointment(id) {
+            document.getElementById('confirmForm').action = '/doctor/appointments/' + id + '/confirm';
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

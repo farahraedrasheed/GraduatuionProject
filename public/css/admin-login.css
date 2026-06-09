@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+.header {
+    background-color: #ffffff;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    border-bottom: 2px solid #e2e8f0;
+    padding: 12px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: transparent;
+}
+
+.clinic-name {
+    color: #1d4ed8;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.home-log {
+    list-style: none;
+    display: flex;
+    gap: 0.3rem;
+    margin-right: 2rem;
+}
+
+.home-log li a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.home-log li a:hover {
+    color: #1d4ed8;
+    background: #eff6ff;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 130px 20px 60px; 
+    min-height: 100vh; 
+}
+
+.card {
+    background: #ffffff;
+    padding: 40px; 
+    border-radius: 20px;
+    width: 100%;
+    max-width: 480px; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.active { 
+    display: block; 
+}
+
+h2 { 
+    text-align: center; 
+    margin-bottom: 15px; 
+    color: #1e293b; 
+    font-size: 28px; 
+    font-weight: 900;
+}
+
+.role-badge {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: white;
+    width: fit-content;
+    margin: 0 auto 30px;
+    padding: 4px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px 18px; 
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    text-align: right;
+    color: #1e293b;
+    background: #ffffff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    cursor: pointer;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 18px; 
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 25px; 
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    transition: all 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.2);
+}
+
+.btn-primary:hover { 
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+.footer-text { 
+    text-align: center; 
+    font-size: 15px; 
+    margin-top: 25px; 
+    color: #64748b; 
+}
+
+a { 
+    color: #1d4ed8; 
+    text-decoration: none; 
+    font-weight: 700; 
+    cursor: pointer;
+}
+
+a:hover {
+    color: #2563eb;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #3b82f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #3b82f6;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}

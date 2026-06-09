@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقارير الطبية - لوحة تحكم المريض</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="appointments.html">مواعيدي</a>
+                    <a href="medical-records.html">السجلات الطبية</a>
+                    <a href="medical-reports.html" class="active">التقارير الطبية</a>
+                    <a href="../profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="../login.html" class="btn btn-ghost">لوحة التحكم</a>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 1.5rem;">التقارير الطبية</h2>
+
+            <div style="background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <h3 style="font-weight: 600; margin-bottom: 1rem;">رفع تقرير جديد</h3>
+                <form>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div>
+                            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">الملف (PDF, JPG, PNG, DOC - حد أقصى 10MB)</label>
+                            <input type="file" name="file" required accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                                   style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 8px;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.9rem; font-weight: 600; color: #374151; margin-bottom: 0.25rem;">وصف التقرير (اختياري)</label>
+                            <textarea name="description" rows="2" style="width: 100%; border: 1px solid #d1d5db; border-radius: 8px; padding: 0.75rem;"></textarea>
+                        </div>
+                        <div style="display: flex; justify-content: flex-end;">
+                            <button type="submit" class="btn btn-primary">رفع التقرير</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div style="background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 1.5rem;">
+                <h3 style="font-weight: 600; margin-bottom: 1rem;">التقارير المرفوعة</h3>
+
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 8px;">
+                        <div style="flex: 1;">
+                            <p style="font-weight: 600;">تقرير تحليل الدم - يونيو 2026.pdf</p>
+                            <p style="font-size: 0.85rem; color: #6b7280;">تحليل دم شامل بتاريخ 2026-06-01</p>
+                            <p style="font-size: 0.8rem; color: #9ca3af;">2026-06-05 14:30</p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <a href="#" class="btn btn-ghost" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;">تحميل</a>
+                            <button class="btn btn-danger" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;" onclick="return confirm('هل أنت متأكد من حذف هذا التقرير؟')">حذف</button>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; border: 1px solid #e5e7eb; border-radius: 8px;">
+                        <div style="flex: 1;">
+                            <p style="font-weight: 600;">أشعة سينية للصدر.jpg</p>
+                            <p style="font-size: 0.85rem; color: #6b7280;">أشعة الصدر بتاريخ 2026-05-20</p>
+                            <p style="font-size: 0.8rem; color: #9ca3af;">2026-05-20 11:15</p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <a href="#" class="btn btn-ghost" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;">تحميل</a>
+                            <button class="btn btn-danger" style="font-size: 0.85rem; padding: 0.4rem 0.75rem;" onclick="return confirm('هل أنت متأكد من حذف هذا التقرير؟')">حذف</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function toggleNav() {
+            document.getElementById('navMenu').classList.toggle('open');
+            document.querySelector('.nav-overlay').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
