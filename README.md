@@ -5,7 +5,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-blueviolet?style=for-the-badge)](https://github.com/farahraedrasheed/GraduatuionProject)
 [![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 [![Laravel](https://img.shields.io/badge/Laravel-13-red?style=for-the-badge&logo=laravel)](https://laravel.com)
-[![PHP](https://img.shields.io/badge/PHP-8.2+-blue?style=for-the-badge&logo=php)](https://php.net)
+[![PHP](https://img.shields.io/badge/PHP-8.5+-blue?style=for-the-badge&logo=php)](https://php.net)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com)
 
 ---
@@ -63,7 +63,7 @@
 | التقنية | الاستخدام |
 |---|---|
 | **Laravel 13** | إطار العمل الخلفي |
-| **PHP 8.2+** | لغة البرمجة |
+| **PHP 8.5+** | لغة البرمجة |
 | **MySQL** | قاعدة البيانات |
 | **Tailwind CSS** | التصميم والواجهة |
 | **Alpine.js** | التفاعلية في الواجهة |
@@ -107,7 +107,7 @@ clinic-app/
 ## 🏁 طريقة التشغيل
 
 ### المتطلبات
-- PHP 8.2+
+- PHP 8.5+
 - MySQL
 - Composer
 - Node.js & npm
@@ -175,4 +175,4 @@ php artisan serve
 
 ---
 
-> **🏆 تم التطوير بواسطة:** Farah Raed Rasheed — مشروع تخرج
+> **🏆 تم التطوير بواسطة:** Maram Hassouna · Farah Rasheed · Hurih Atallah · Ruba Altatari — مشروع تخرج
