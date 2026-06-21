@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المواعيد - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/doctor-appointments.css">
+    <script src="../js/app.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="appointments.html" class="active">المواعيد</a>
+                    <a href="patients.html">مرضاي</a>
+                    <a href="schedule.html">الجدول</a>
+                    <a href="profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <div x-data="{ open: false }" class="notif-wrapper">
+                    <button @click="open = !open" class="notif-btn">
+                        <svg class="notif-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                        <span class="notif-badge">3</span>
+                    </button>
+                    <div x-show="open" @click.away="open = false" x-transition class="notif-dropdown">
+                        <div class="notif-dropdown-header">
+                            <span class="notif-dropdown-title">الإشعارات</span>
+                            <button class="notif-mark-btn">تعليم الكل</button>
+                        </div>
+                        <div class="notif-item">
+                            <p class="notif-item-text">تم حجز موعد جديد من قبل محمد أحمد</p>
+                            <p class="notif-item-time">منذ 10 دقائق</p>
+                        </div>
+                        <div class="notif-item">
+                            <p class="notif-item-text">تم إلغاء موعد من قبل سارة خالد</p>
+                            <p class="notif-item-time">منذ ساعة</p>
+                        </div>
+                        <div class="notif-item">
+                            <p class="notif-item-text">تم إضافة سجل طبي للمريض عمر حسن</p>
+                            <p class="notif-item-time">منذ 3 ساعات</p>
+                        </div>
+                        <a href="../admin/notifications.html" class="notif-view-all">
+                            عرض كل الإشعارات
+                        </a>
+                    </div>
+                </div>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div class="appointments-container">
+            <div class="appointments-header">
+                <h2 class="appointments-title">إدارة المواعيد</h2>
+                <a href="appointments-create.html" class="btn btn-primary appointments-add-btn">
+                    + حجز موعد جديد
+                </a>
+            </div>
+
+            <div class="filter-card">
+                <form class="filter-form">
+                    <div class="filter-group">
+                        <label class="filter-label">البحث عن مريض</label>
+                        <input type="text" name="search" value="" placeholder="اسم المريض..." class="filter-input">
+                    </div>
+                    <div>
+                        <label class="filter-label">الحالة</label>
+                        <select name="status" class="filter-select">
+                            <option value="">كل الحالات</option>
+                            <option value="pending">معلق</option>
+                            <option value="confirmed">مؤكد</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="cancelled">ملغي</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">بحث</button>
+                    <a href="appointments.html" class="btn btn-ghost filter-cancel">إلغاء</a>
+                </form>
+            </div>
+
+            <div id="successMsg" class="success-msg">
+                تمت العملية بنجاح
+            </div>
+
+            <div id="errorMsg" class="error-msg">
+                حدث خطأ ما
+            </div>
+
+            <div class="appointments-table-wrapper">
+                <table class="appointments-table">
+                    <thead class="appointments-thead">
+                        <tr>
+                            <th class="appointments-th">المريض</th>
+                            <th class="appointments-th">نوع الزيارة</th>
+                            <th class="appointments-th">وصف الحالة</th>
+                            <th class="appointments-th">تاريخ الطلب</th>
+                            <th class="appointments-th">تاريخ الموعد</th>
+                            <th class="appointments-th">الحالة</th>
+                            <th class="appointments-th">ملاحظات</th>
+                            <th class="appointments-th">إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="appointments-tr">
+                            <td class="appointments-td">محمد أحمد</td>
+                            <td class="appointments-td-sm">أمراض القلب والشرايين</td>
+                            <td class="appointments-td-sm">متابعة دورية للقلب وقياس ضغط الدم</td>
+                            <td class="appointments-td-sm">2026-06-01</td>
+                            <td class="appointments-td"><span class="status-pending-text">بانتظار التأكيد</span></td>
+                            <td class="appointments-td"><span class="badge badge-pending">معلق</span></td>
+                            <td class="appointments-td-sm" style="color: #6b7280;">-</td>
+                            <td class="appointments-td">
+                                <button onclick="confirmAppointment(1)" class="action-btn-confirm">تأكيد</button>
+                                <button onclick="completeAppointment(1)" class="action-btn-complete">إكمال</button>
+                                <button onclick="deleteAppointment(1)" class="action-btn-delete">حذف</button>
+                            </td>
+                        </tr>
+                        <tr class="appointments-tr">
+                            <td class="appointments-td">سارة خالد</td>
+                            <td class="appointments-td-sm">أمراض القلب</td>
+                            <td class="appointments-td-sm">ألم في الصدر</td>
+                            <td class="appointments-td-sm">2026-05-28</td>
+                            <td class="appointments-td">2026-06-08 14:30</td>
+                            <td class="appointments-td"><span class="badge badge-confirmed">مؤكد</span></td>
+                            <td class="appointments-td-sm" style="color: #6b7280;">الالتزام بالجرعة</td>
+                            <td class="appointments-td">
+                                <button onclick="editAppointment(2)" class="action-btn-edit">تعديل</button>
+                                <a href="medical-record-create.html" class="action-btn-record">سجل طبي</a>
+                                <button onclick="completeAppointment(2)" class="action-btn-complete">إكمال</button>
+                                <button onclick="deleteAppointment(2)" class="action-btn-delete">حذف</button>
+                            </td>
+                        </tr>
+                        <tr class="appointments-tr">
+                            <td class="appointments-td">عمر حسن</td>
+                            <td class="appointments-td-sm">كشف عام</td>
+                            <td class="appointments-td-sm">فحص عام</td>
+                            <td class="appointments-td-sm">2026-05-25</td>
+                            <td class="appointments-td">2026-06-10 11:00</td>
+                            <td class="appointments-td"><span class="badge badge-completed">مكتمل</span></td>
+                            <td class="appointments-td-sm" style="color: #6b7280;">-</td>
+                            <td class="appointments-td"><span class="action-disabled">-</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="emptyState" class="empty-state">
+                    لا توجد مواعيد
+                </div>
+
+                <div id="pagination" class="pagination">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-title">تأكيد الموعد</h3>
+            <form id="confirmForm" method="POST">
+                <input type="hidden" name="_token" value="csrf-token">
+                <input type="hidden" name="_method" value="PATCH">
+                <div class="modal-field">
+                    <label class="modal-label">تاريخ ووقت الموعد</label>
+                    <input type="datetime-local" name="appointment_date" required class="modal-input">
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-primary">تأكيد</button>
+                    <button type="button" onclick="closeModal()" class="btn btn-ghost">إلغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        function confirmAppointment(id) {
+            document.getElementById('confirmForm').action = '/doctor/appointments/' + id + '/confirm';
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+        }
+        function editAppointment(id) {
+            window.location.href = 'appointments-edit.html?id=' + id;
+        }
+        function completeAppointment(id) {
+            if (confirm('هل أنت متأكد من إكمال هذا الموعد؟')) {
+                alert('تم إكمال الموعد #' + id);
+            }
+        }
+        function deleteAppointment(id) {
+            if (confirm('هل أنت متأكد من حذف هذا الموعد؟')) {
+                alert('تم حذف الموعد #' + id);
+            }
+        }
+    </script>
+</body>
+</html>

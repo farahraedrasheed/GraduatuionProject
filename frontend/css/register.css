@@ -1,0 +1,46 @@
+.field-hint {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.age-display {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.error-alert {
+    margin-bottom: 1rem;
+    padding: 10px;
+    background: #fee2e2;
+    border-radius: 8px;
+    display: none;
+}
+
+.error-text {
+    color: #dc2626;
+    font-size: 0.9rem;
+}
+
+.login-link {
+    color: #6b7280;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.register-btn {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+}
+
+.register-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: translateY(-1px);
+}

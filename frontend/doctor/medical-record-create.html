@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة سجل طبي - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/doctor-medical-record-create.css">
+    <script src="../js/app.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="../Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="dashboard.html">لوحة التحكم</a>
+                    <a href="appointments.html">المواعيد</a>
+                    <a href="patients.html" class="active">مرضاي</a>
+                    <a href="schedule.html">الجدول</a>
+                    <a href="profile.html">ملفي الشخصي</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <div x-data="{ open: false }" class="notif-wrapper">
+                    <button @click="open = !open" class="notif-btn">
+                        <svg class="notif-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                        <span class="notif-badge">3</span>
+                    </button>
+                    <div x-show="open" @click.away="open = false" x-transition class="notif-dropdown">
+                        <div class="notif-dropdown-header">
+                            <span class="notif-dropdown-title">الإشعارات</span>
+                            <button class="notif-mark-btn">تعليم الكل</button>
+                        </div>
+                        <div class="notif-item">
+                            <p class="notif-item-text">تم حجز موعد جديد من قبل محمد أحمد</p>
+                            <p class="notif-item-time">منذ 10 دقائق</p>
+                        </div>
+                        <div class="notif-item">
+                            <p class="notif-item-text">تم إلغاء موعد من قبل سارة خالد</p>
+                            <p class="notif-item-time">منذ ساعة</p>
+                        </div>
+                        <div class="notif-item">
+                            <p class="notif-item-text">تم إضافة سجل طبي للمريض عمر حسن</p>
+                            <p class="notif-item-time">منذ 3 ساعات</p>
+                        </div>
+                        <a href="../admin/notifications.html" class="notif-view-all">
+                            عرض كل الإشعارات
+                        </a>
+                    </div>
+                </div>
+                <button class="btn btn-danger">تسجيل خروج</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-content">
+        <div class="record-create-container">
+            <div class="form-card">
+                <h2 class="record-create-title">
+                    إضافة سجل طبي للمريض: محمد أحمد
+                </h2>
+
+                <form>
+                    <div class="record-create-fields">
+                        <div>
+                            <label class="record-create-label">التشخيص</label>
+                            <textarea name="diagnosis" rows="3" required class="form-input" style="padding: 0.75rem;"></textarea>
+                        </div>
+                        <div>
+                            <label class="record-create-label">الوصفة الطبية</label>
+                            <textarea name="prescription" rows="3" class="form-input" style="padding: 0.75rem;"></textarea>
+                        </div>
+                        <div>
+                            <label class="record-create-label">الملاحظات</label>
+                            <textarea name="notes" rows="3" class="form-input" style="padding: 0.75rem;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="record-create-actions">
+                        <a href="appointments.html" class="btn btn-ghost">إلغاء</a>
+                        <button type="submit" class="btn btn-primary">حفظ السجل الطبي</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

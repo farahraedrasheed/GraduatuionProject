@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="login.html" class="btn btn-ghost">دخول</a>
+                <a href="register.html" class="btn btn-primary">حساب</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="register-wrapper">
+            <h2>إنشاء حساب جديد</h2>
+
+            <form>
+                <div class="form-group">
+                    <label for="role">نوع الحساب</label>
+                    <select id="role" name="role" onchange="toggleRoleFields()">
+                        <option value="patient">مريض</option>
+                        <option value="doctor">طبيب</option>
+                    </select>
+                </div>
+
+                <div id="doctorFields" class="hidden">
+                    <div class="form-group">
+                        <label for="specialty">التخصص</label>
+                        <select id="specialty" name="specialty">
+                            <option value="">-- اختر التخصص --</option>
+                            <optgroup label="طب الأطفال">
+                                <option value="طب الأطفال">طب الأطفال</option>
+                            </optgroup>
+                            <optgroup label="الحمل والولادة">
+                                <option value="نساء وتوليد">نساء وتوليد</option>
+                            </optgroup>
+                            <optgroup label="الأمراض المزمنة">
+                                <option value="القلب والشرايين">القلب والشرايين</option>
+                                <option value="السكري والغدد">السكري والغدد</option>
+                                <option value="أمراض الدم">أمراض الدم</option>
+                            </optgroup>
+                            <optgroup label="الباطنة">
+                                <option value="الباطنة">الباطنة</option>
+                                <option value="الكبد الوبائي">الكبد الوبائي (الباطنة)</option>
+                            </optgroup>
+                            <optgroup label="طب عام">
+                                <option value="طب عام">طب عام</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="license_number">رقم الترخيص</label>
+                        <input type="text" name="license_number" id="license_number" placeholder="مثال: LIC-25-00001">
+                        <p class="field-hint">يجب أن يبدأ بـ LIC- يتبعه سنة ثم رقم تسلسلي</p>
+                    </div>
+                </div>
+
+                <div id="patientFields">
+                    <div id="patientTypeGroup" class="form-group">
+                        <label for="patient_type">فئة المريض</label>
+                        <select id="patient_type" name="patient_type" onchange="toggleChronicDisease(); handlePatientTypeChange()">
+                            <option value="child">طفل (طب الأطفال)</option>
+                            <option value="pregnant">حامل (نساء وتوليد)</option>
+                            <option value="chronic_disease">مريض مزمن</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+
+                    <div id="chronicDiseaseField" class="form-group hidden">
+                        <label for="chronic_disease_type">نوع المرض المزمن</label>
+                        <select id="chronic_disease_type" name="chronic_disease_type">
+                            <option value="">-- اختر --</option>
+                            <option value="القلب والشرايين">القلب والشرايين</option>
+                            <option value="أمراض الكلى">أمراض الكلى</option>
+                            <option value="السكري والغدد">السكري والغدد</option>
+                            <option value="أمراض الدم">أمراض الدم</option>
+                            <optgroup label="الباطنة">
+                                <option value="الباطنة">الباطنة</option>
+                                <option value="الكبد الوبائي">الكبد الوبائي (الباطنة)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" name="phone" id="phone" placeholder="0599999999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date_of_birth">تاريخ الميلاد</label>
+                        <input type="date" name="date_of_birth" id="date_of_birth" onchange="calculateAge(this.value)">
+                        <p id="ageDisplay" class="age-display"></p>
+                        <input type="hidden" name="age" id="ageInput">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">الجنس</label>
+                        <select id="gender" name="gender">
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">كلمة المرور</label>
+                    <input type="password" name="password" id="password" required autocomplete="new-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="password_confirmation">تأكيد كلمة المرور</label>
+                    <input type="password" name="password_confirmation" id="password_confirmation" required autocomplete="new-password">
+                </div>
+
+                <div class="error-alert">
+                    <p class="error-text">هناك أخطاء في البيانات المدخلة.</p>
+                </div>
+
+                <div class="flex-row">
+                    <a href="login.html" class="login-link">لديك حساب بالفعل؟</a>
+                    <button type="submit" onclick="validatePatientForm(event)" class="register-btn">إنشاء حساب</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

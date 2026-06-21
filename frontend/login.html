@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="login.html" class="btn btn-ghost">دخول</a>
+                <a href="register.html" class="btn btn-primary">حساب</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>تسجيل الدخول</h2>
+            <p class="login-subtitle">مرحبا بكم في المركز الطبي</p>
+
+            <form>
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" name="email" value="" required autofocus>
+                </div>
+
+                <div class="form-group form-group-lg">
+                    <label>كلمة المرور</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                <div class="error-alert">
+                    <p class="error-text">خطأ في البريد الإلكتروني أو كلمة المرور</p>
+                </div>
+
+                <div class="form-actions">
+                    <a href="forgot-password.html" class="forgot-link">نسيت كلمة المرور؟</a>
+                    <button type="submit" class="login-btn">تسجيل الدخول</button>
+                </div>
+            </form>
+
+            <p class="register-link">
+                ليس لديك حساب؟ <a href="register.html">إنشاء حساب</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

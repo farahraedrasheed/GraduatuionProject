@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المركز الطبي | صحتك في أيدٍ أمينة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="login.html" class="btn btn-ghost">دخول</a>
+                <a href="register.html" class="btn btn-primary">حساب</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-wrapper">
+            <div class="content-area">
+                <h1>صحتك في أيدٍ أمينة</h1>
+                <p>نحن نقدم أفضل الخدمات الطبية المتميزة لضمان حياة صحية وسعيدة لك ولعائلتك، مع نخبة من الأطباء المتخصصين.</p>
+
+                <div class="cta-container">
+                    <a href="register.html" class="main-cta">انضم إلينا</a>
+                    <a href="about.html" class="secondary-cta">من نحن</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-section">
+            <div class="container">
+                <h2 class="section-title">خدماتنا الطبية</h2>
+                <p class="services-description">
+                    اختر الفئة المناسبة لك للحصول على الرعاية الطبية المتخصصة
+                </p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon blue">
+                            <svg class="w-8 h-8" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <h3>عيادة الأطفال</h3>
+                        <p>متابعة وتطعيمات الأطفال من الولادة حتى المدرسة مع أفضل أطباء الأطفال</p>
+                        <a href="register.html?role=patient&type=child" class="service-link">تسجيل كمريض طفل</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon pink">
+                            <svg class="w-8 h-8" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3>عيادة الحوامل</h3>
+                        <p>رعاية طبية شاملة للحامل طوال فترة الحمل مع أطباء النساء والتوليد</p>
+                        <a href="register.html?role=patient&type=pregnant" class="service-link">تسجيل كحامل</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon green">
+                            <svg class="w-8 h-8" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3>عيادة الأمراض المزمنة</h3>
+                        <p>متابعة وعلاج القلب والسكر وأمراض الكبد والكلى والغدد</p>
+                        <a href="register.html?role=patient&type=chronic" class="service-link">تسجيل كمريض مزمن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السجلات الطبية - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/patient-print-medical-records.css">
+</head>
+<body>
+
+<div class="no-print" style="display: flex; gap: 1rem; align-items: center;">
+    <button onclick="window.print()"
+            style="background:#3b82f6;color:white;border:none;border-radius:6px;padding:0.6rem 1.5rem;cursor:pointer;font-family:'Cairo',sans-serif;font-size:0.9rem;font-weight:700;">
+        🖨️ طباعة / حفظ PDF
+    </button>
+    <a href="medical-records.html"
+       style="color:#6b7280;text-decoration:none;font-size:0.9rem;">← العودة</a>
+</div>
+
+<div class="header">
+    <h1>المركز الطبي - السجلات الطبية</h1>
+    <p>أحمد علي | تاريخ الطباعة: 2026-06-11</p>
+</div>
+
+<div class="patient-info">
+    <div><span>العمر:</span> 32</div>
+    <div><span>الجنس:</span> ذكر</div>
+    <div><span>الهاتف:</span> ٠٥٩٩١٢٣٤٥٦</div>
+    <div><span>فصيلة الدم:</span> O+</div>
+</div>
+
+<div class="record">
+    <div class="record-header">
+        <div>
+            <div class="record-doctor">د. محمد حسن</div>
+            <div class="record-specialty">طب عام</div>
+        </div>
+        <div class="record-date">2026-05-15</div>
+    </div>
+
+    <div class="section section-diagnosis">
+        <div class="section-label">التشخيص</div>
+        <div>التهاب في الحلق مع ارتفاع في درجة الحرارة - التهاب بلعوم حاد</div>
+    </div>
+
+    <div class="section section-prescription">
+        <div class="section-label">الوصفة الطبية</div>
+        <div style="white-space: pre-line;">- أموكسيسيلين 500 ملغ 3 مرات يومياً لمدة 7 أيام
+- باراسيتامول 500 ملغ عند الحاجة للحرارة
+- غرغرة بماء وملح 3 مرات يومياً
+- راحة لمدة يومين</div>
+    </div>
+
+    <div class="section section-notes">
+        <div class="section-label">ملاحظات</div>
+        <div>يحتاج متابعة بعد أسبوع في حال عدم التحسن. تجنب الأطعمة الباردة والحارة.</div>
+    </div>
+</div>
+
+<div class="record">
+    <div class="record-header">
+        <div>
+            <div class="record-doctor">د. سارة خالد</div>
+            <div class="record-specialty">أمراض مزمنة</div>
+        </div>
+        <div class="record-date">2026-04-02</div>
+    </div>
+
+    <div class="section section-diagnosis">
+        <div class="section-label">التشخيص</div>
+        <div>ارتفاع ضغط الدم - المرحلة الأولى - متابعة دورية</div>
+    </div>
+
+    <div class="section section-prescription">
+        <div class="section-label">الوصفة الطبية</div>
+        <div style="white-space: pre-line;">- ليزينوبريل 10 ملغ مرة يومياً
+- إعادة فحص الضغط بعد أسبوعين
+- حمية غذائية قليلة الملح
+- رياضة مشي 30 دقيقة يومياً</div>
+    </div>
+
+    <div class="section section-notes">
+        <div class="section-label">ملاحظات</div>
+        <div>الالتزام بالحمية الغذائية ضروري. متابعة شهرية لقياس الضغط.</div>
+    </div>
+</div>
+
+<div class="footer">
+    المركز الطبي | جميع الحقوق محفوظة © 2026
+</div>
+</body>
+</html>

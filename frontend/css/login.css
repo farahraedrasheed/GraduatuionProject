@@ -1,0 +1,43 @@
+.login-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+.form-group-lg {
+    margin-bottom: 1.5rem;
+}
+
+.error-alert {
+    margin-bottom: 1rem;
+    padding: 10px;
+    background: #fee2e2;
+    border-radius: 8px;
+    display: none;
+}
+
+.error-text {
+    color: #dc2626;
+    font-size: 0.9rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-link {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #6b7280;
+}
+
+.register-link a {
+    color: #3b82f6;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - المركز الطبي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-right">
+                <div class="logo-section">
+                    <img src="Photo/logo.jpeg" alt="logo" class="logo"/>
+                    <span class="clinic-name">المركز الطبي</span>
+                </div>
+                <div class="nav-overlay" onclick="toggleNav()"></div>
+                <nav class="nav-links" id="navMenu">
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                </nav>
+            </div>
+            <div class="nav-left">
+                <a href="login.html" class="btn btn-ghost">دخول</a>
+                <a href="register.html" class="btn btn-primary">حساب</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="about-page-wrapper">
+            <div class="about-container">
+                <h1>من نحن</h1>
+
+                <div class="intro-text">
+                    <p>نحن عيادة طبية حديثة تعتمد على التكنولوجيا لتقديم خدمات رعاية صحية متكاملة عن بُعد، من خلال نظام إلكتروني متطور لمراقبة المرضى وإدارة الحالات الطبية.</p>
+                    <p>يهدف مشروعنا إلى ربط المرضى بالأطباء بطريقة سهلة وآمنة، حيث يمكن للمرضى إدخال بياناتهم الصحية، رفع التقارير الطبية، والتواصل المباشر مع الأطباء دون الحاجة إلى زيارة العيادة بشكل فعلي.</p>
+                </div>
+
+                <section class="info-grid">
+                    <div class="info-block">
+                        <h2>نبذة عن النظام الطبي</h2>
+                        <ul>
+                            <li>إنشاء ملف طبي إلكتروني لكل مريض</li>
+                            <li>متابعة الأعراض والحالات المزمنة بشكل دوري</li>
+                            <li>رفع التقارير الطبية (صور، أشعة، إلخ)</li>
+                            <li>التواصل المباشر والآمن بين الطبيب والمريض</li>
+                            <li>حجز المواعيد وإرسال التذكيرات التلقائية</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-block">
+                        <h2>هدفنا</h2>
+                        <ul>
+                            <li>تسهيل الوصول إلى الخدمات الطبية</li>
+                            <li>تقليل الضغط على المستشفيات والعيادات</li>
+                            <li>توفير وقت الانتظار للمرضى</li>
+                            <li>تغطية متابعة مستمرة للحالات المزمنة</li>
+                            <li>تحسين التواصل بين الطبيب والمريض</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="about-cards">
+                    <div class="card">
+                        <h3>رؤيتنا</h3>
+                        <p>أن نكون منصة رائدة في الرعاية الصحية الرقمية، تساهم في تقديم خدمات طبية فعالة وآمنة ومتاحة للجميع.</p>
+                    </div>
+
+                    <div class="card highlight-card">
+                        <h3>رسالتنا</h3>
+                        <p>تقديم نظام صحي رقمي متكامل يركز على المريض، يضمن جودة الرعاية، ويحافظ على خصوصية البيانات الطبية.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>قيمينا</h3>
+                        <ul class="values-list">
+                            <li>الاحترافية والخصوصية</li>
+                            <li>الإنسانية والابتكار</li>
+                            <li>الموثوقية والأمان</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 المركز الطبي. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
