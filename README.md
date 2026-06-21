@@ -110,7 +110,6 @@ clinic-app/
 - PHP 8.5+
 - MySQL
 - Composer
-- Node.js & npm
 - XAMPP (أو أي بيئة مشابهة)
 
 ### خطوات التثبيت
@@ -147,11 +146,7 @@ php artisan migrate --seed
 # 6. ربط مجلد التخزين
 php artisan storage:link
 
-# 7. تثبيت اعتماديات JavaScript وبناء الـ assets
-npm install
-npm run build
-
-# 8. تشغيل الخادم
+# 7. تشغيل الخادم
 php artisan serve
 ```
 
